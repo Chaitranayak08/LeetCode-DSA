@@ -9,10 +9,7 @@ class Solution {
             flag= true;
             break;
        }
-        else{
-            flag= false;
-          
-        }
+       
        }
        return flag;
        }
