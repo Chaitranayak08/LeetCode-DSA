@@ -10,27 +10,17 @@ class Solution {
         map.put('D', 500);
         map.put('M', 1000);
 
+        int number=0;
+        for(int i=0;i<s.length()-1;i++){
+            int first=map.get(s.charAt(i));
+            int second=map.get(s.charAt(i+1));
 
-       int number=0;
-
-       for(int i=0;i<s.length()-1;i++){
-        char first = s.charAt(i);
-        int firstval=map.get(first);
-
-        char next=s.charAt(i+1);
-        int nextval=map.get(next);
-
-        if(firstval<nextval){
-            number-=firstval;
-
-        }else{
-            number+=firstval;
+            if(first<second){
+                number-=first;
+            }else{
+                number+=first;
+            }
         }
-
-       
-        
-       }
-         number+=map.get(s.charAt(s.length()-1));
-        return number;
+        return number+(map.get(s.charAt(s.length()-1)));
     }
 }
